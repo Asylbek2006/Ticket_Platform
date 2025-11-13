@@ -1,0 +1,442 @@
+/* ========================================
+   GENERAL & TYPOGRAPHY
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    padding-top: 76px !important; /* Навбар биіктігі */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========================================
+   NAVBAR – ТЕК ӨЗ БӨЛІГІН ЖАБАДЫ (fixed + shadow)
+   ======================================== */
+.header {
+    background: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    height: 76px;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    height: 70px;
+    padding: 0.25rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #0d6efd !important;
+}
+
+.navbar-brand i {
+    color: #0d6efd;
+}
+
+.nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+    margin: 0 0.25rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #0d6efd !important;
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+.nav-link .badge {
+    font-size: 0.7rem;
+    vertical-align: middle;
+    margin-left: 0.25rem;
+}
+
+/* Theme Toggle */
+#themeToggle {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid #ddd;
+    background: transparent;
+    color: #555;
+    transition: all 0.2s ease;
+}
+
+#themeToggle:hover {
+    background: #f0f0f0;
+    border-color: #0d6efd;
+    color: #0d6efd;
+}
+
+/* ========================================
+   MAIN CONTENT – НАВБАРДЫҢ АСТЫНАН БАСТАЛАДЫ
+   ======================================== */
+.main-content {
+    flex: 1;
+    padding-bottom: 2rem;
+}
+
+/* ========================================
+   HERO CAROUSEL
+   ======================================== */
+.hero-carousel {
+    margin-top: -76px;
+}
+
+.hero-slide {
+    height: 100vh;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-slide::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text .btn {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+/* ========================================
+   FEATURES
+   ======================================== */
+.features {
+    padding: 4rem 0;
+}
+
+.feature-icon {
+    color: #0d6efd;
+    margin-bottom: 1rem;
+}
+
+.feature-icon i {
+    font-size: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.feature-icon:hover i {
+    transform: scale(1.1);
+}
+
+/* ========================================
+   EVENT CARDS
+   ======================================== */
+.event-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.event-card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.event-card:hover img {
+    transform: scale(1.05);
+}
+
+.event-card .card-body {
+    padding: 1.5rem;
+}
+
+.event-card .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #212529;
+}
+
+.event-card .card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.event-card .card-text i {
+    width: 18px;
+    color: #0d6efd;
+}
+
+.event-card .add-to-fav {
+    font-size: 1.3rem;
+    transition: all 0.2s ease;
+}
+
+.event-card .add-to-fav:hover {
+    transform: scale(1.2);
+}
+
+.text-primary.fw-bold {
+    font-size: 1.2rem;
+}
+
+/* ========================================
+   NEWS SECTION
+   ======================================== */
+#newsContainer .card {
+    transition: all 0.3s ease;
+    border-radius: 0.75rem;
+}
+
+#newsContainer .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#newsContainer img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ========================================
+   FOOTER – ӘДЕМІ, КӘСІБИ, RESPONSIVE
+   ======================================== */
+.footer {
+    background: #1a1a1a !important;
+    color: #ccc !important;
+    padding: 3rem 0 1.5rem;
+    margin-top: 5rem;
+    border-top: 1px solid #333;
+    font-size: 0.95rem;
+}
+
+.footer .container {
+    max-width: 1200px;
+}
+
+.footer p {
+    margin: 0;
+    font-weight: 400;
+}
+
+.footer .brand {
+    font-weight: 700;
+    color: #0d6efd !important;
+}
+
+.footer a {
+    color: #aaa !important;
+    font-size: 1.4rem;
+    margin: 0 0.75rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer a:hover {
+    color: #0d6efd !important;
+    transform: translateY(-3px) scale(1.1);
+    text-shadow: 0 0 8px rgba(13, 110, 253, 0.4);
+}
+
+/* ========================================
+   DARK MODE – ALL PAGES
+   ======================================== */
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .header,
+.dark-mode .navbar {
+    background: #1e1e1e !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .header.scrolled {
+    background: rgba(30, 30, 30, 0.95) !important;
+}
+
+.dark-mode .nav-link {
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .nav-link:hover,
+.dark-mode .nav-link.active {
+    color: #ffd700 !important;
+    background-color: rgba(255, 215, 0, 0.2);
+}
+
+.dark-mode .navbar-brand,
+.dark-mode .navbar-brand i {
+    color: #ffd700 !important;
+}
+
+.dark-mode #themeToggle {
+    border-color: #555;
+    color: #ccc;
+}
+
+.dark-mode #themeToggle:hover {
+    background: #333;
+    border-color: #ffd700;
+    color: #ffd700;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .card-title,
+.dark-mode .card-text {
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .text-primary {
+    color: #ffd700 !important;
+}
+
+.dark-mode .footer {
+    background: #0f0f0f !important;
+    border-top-color: #444;
+}
+
+.dark-mode .footer a {
+    color: #999 !important;
+}
+
+.dark-mode .footer a:hover {
+    color: #ffd700 !important;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 992px) {
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px !important;
+    }
+    .header {
+        height: 70px;
+    }
+    .header.scrolled {
+        height: 64px;
+    }
+    .navbar-collapse {
+        background: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+-cream: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .dark-mode .navbar-collapse {
+        background: #1e1e1e;
+    }
+    .footer {
+        text-align: center;
+        padding: 2.5rem 0 1rem;
+    }
+    .footer .text-md-end {
+        text-align: center !important;
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .event-card .card-body {
+        padding: 1rem;
+    }
+    .footer a {
+        margin: 0 0.5rem;
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,12 @@
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+.dark-mode .header, .dark-mode .footer, .dark-mode .card, .dark-mode .navbar {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+}
+.dark-mode .nav-link { color: #ccc !important; }
+.dark-mode .nav-link.active { color: #ffd700 !important; }
+.dark-mode .card { border-color: #333; }
+.dark-mode .btn-outline-primary { border-color: #ffd700; color: #ffd700; }
